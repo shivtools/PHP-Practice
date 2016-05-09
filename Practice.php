@@ -47,9 +47,16 @@ $string_two = 'This is my essay, I am gonna talk about $PHP';
 similar_text($string_one, $string_two, $result); //Compare two strings for similarity
 
 //Trim string -- remove whitespace
-
 $string_with_white_space = 'This is an    example string';
 $string_trimmed = trim($string); //removes whitespace from string
+
+//Add slashes - will add slashes after " and before "
+$string = 'This is a <img src="image.jpg"> string.';
+$string_slashes = html_entities(addslashes($string));
+
+$string_without_slashes = $stringslashes($string_slashes); //data maybe stored in database with slashes and if we wanna display it on page, strip slashes before doing that
+
+
 echo $result;
 
 
@@ -57,6 +64,7 @@ echo $result;
 //printing in PHP
 print_r($string_word_count); //print an array in php
 echo $string_word_count;
+
 
 
 
